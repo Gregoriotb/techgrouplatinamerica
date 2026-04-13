@@ -290,7 +290,23 @@ export default function App() {
       </nav>
 
       {/* ========== HERO ========== */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-intl via-blue-900 to-blue-950 overflow-hidden font-display">
+      <section className="relative min-h-screen flex items-center overflow-hidden font-display">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=2000&q=85')",
+          }}
+        />
+        {/* Color overlay for brand consistency */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(135deg, rgba(0,59,92,0.92) 0%, rgba(30,58,138,0.85) 45%, rgba(15,23,42,0.9) 100%)',
+          }}
+        />
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
 
