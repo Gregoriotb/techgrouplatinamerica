@@ -415,6 +415,121 @@ export default function App() {
         </div>
       </Section>
 
+      {/* ========== OPERATIONS GALLERY ========== */}
+      <Section id="operaciones" className="py-20 lg:py-28 bg-ice-white font-body">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-intl">
+              Nuestras Operaciones
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+              Tres verticales estratégicas que conectan USA con Latinoamérica sin fricción.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                src: '/img1.webp',
+                badge: 'Tech Import',
+                badgeColor: 'bg-blue-intl',
+                title: 'Proveedores Tech USA',
+                desc: 'Acceso directo a los principales mayoristas de hardware y componentes de computación en Estados Unidos.',
+                delay: 'delay-100',
+              },
+              {
+                src: '/img2.jpg',
+                badge: 'Consumer Electronics',
+                badgeColor: 'bg-orange-connect',
+                title: 'Productos Premium',
+                desc: 'Catálogo curado de dispositivos, laptops y tablets de marcas líderes con garantía internacional.',
+                delay: 'delay-200',
+              },
+              {
+                src: '/img3.webp',
+                badge: 'Food & Logística',
+                badgeColor: 'bg-green-latam',
+                title: 'Cadena de Suministro',
+                desc: 'Importación de alimentos premium con cadena de frío y distribución multimodal hacia LATAM.',
+                delay: 'delay-300',
+              },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className={`group animate-fade-in-up ${card.delay} rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2`}
+              >
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={card.src}
+                    alt={card.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        'linear-gradient(180deg, transparent 50%, rgba(15,23,42,0.7) 100%)',
+                    }}
+                  />
+                  <span
+                    className={`absolute top-4 left-4 ${card.badgeColor} text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg`}
+                  >
+                    {card.badge}
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-800 group-hover:text-blue-intl transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+                    {card.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Secondary strip */}
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              {
+                src: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=700&q=80',
+                label: 'Carga Aérea',
+              },
+              {
+                src: 'https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=700&q=80',
+                label: 'Marítimo',
+              },
+              {
+                src: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?w=700&q=80',
+                label: 'Última Milla',
+              },
+              {
+                src: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=700&q=80',
+                label: 'Consolidación',
+              },
+            ].map((thumb) => (
+              <div
+                key={thumb.label}
+                className="group relative h-28 md:h-32 rounded-xl overflow-hidden shadow-sm"
+              >
+                <img
+                  src={thumb.src}
+                  alt={thumb.label}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-intl/85 via-blue-intl/30 to-transparent" />
+                <span className="absolute bottom-3 left-3 text-white font-semibold text-sm tracking-wide">
+                  {thumb.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* ========== COVERAGE ========== */}
       <Section id="cobertura" className="py-20 lg:py-28 bg-blue-intl font-body">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
